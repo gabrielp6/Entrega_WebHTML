@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Repositorios de Gabriel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+$("#boton").click(function(){
+var url = "https://api.github.com/users/gabrielp6";
+$.get(url, function(data){
+$("#nombre").text(data.nombre)
+$("#descripcion").text(data.descripcion)
+$("#seguidores").text(data.seguidores)
+$("#link").text(data.link);
+
+}, "json" );
+});
+});
+</script>
+
+<div class="container">
+<div class="jumbotron">
+<h1 class="text-center">Mi primera web en HTML</h1>
+
+<h5 class="text-center">Aqui haré mi primera web de la asignatura de DSA usando HTML.</h5>
+<p class="text-center">Consistirá una web donde poniendo mi nombre de usuario saldrán mis repositorios</p>
+</div>
+</div>
+</head>
+
+<body>
+<div class="container">
+<p class="text-secondary">Prueba a buscar los repositorios de "gabrielp6"</p>
+<p>Usuario del que quieres buscar sus repositorios: <input type="text" id="usuario"></p>
+<button type="button" class "boton">Buscar</button>
+</div>
+
+<div class="container">
+<style>
+table, th, td {
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+}
+</style>
+<table class="table-striped" style="width:100%">
+<tr>
+<th><strong>Nombre del repositorio</strong></th>
+<th><strong>Descripcion</strong></th>
+<th><strong>Seguidores</strong></th>
+<th><strong>Link</strong></th>
+</tr>
+
+<tr>
+<td id="nombre">Entrega_WEBHTML</td>
+<td id="descripcion">Primera web con HTML</td>
+<td id="seguidores">0</td>
+<td id="link">https://github.com/gabrielp6/Entrega_WebHTML</td>
+</tr>
+
+</table>
+</div>
+
+<div class="container">
+<p class="text-center">Para más información sobre este usuario y sus repositorios puedes buscar en:</p>
+<p class="text-center">https://api.github.com/users/gabrielp6</p>
+</div>
+</body>
+
+</html>
